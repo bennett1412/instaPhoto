@@ -31,13 +31,18 @@ class _ImageCardState extends State<ImageCard> {
           });
         },
         splashColor: Colors.white,
-        child: Padding(
-          padding: EdgeInsets.all(5),
-          child: Image.asset(
-            'assets/images/${widget.imgSrc}',
-            // width: 30,
-            // height: 400,
-          ),
-        ));
+        child: Container(
+            padding: const EdgeInsets.all(5),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Hero(
+                  tag: widget.imgSrc,
+                  child: Image.asset(
+                    'assets/images/${widget.imgSrc}',
+
+                    // width: 30,
+                    // height: 400,
+                  )),
+            )));
   }
 }

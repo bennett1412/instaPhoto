@@ -20,6 +20,27 @@ class ViewImagePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.white),
         leading: IconButton(onPressed: () => Navigator.of(context).pop(), icon: const Icon(Icons.arrow_back)),
       ),
+      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.black, items: const [
+        BottomNavigationBarItem(
+            label: 'Star',
+            icon: Icon(
+              Icons.star,
+              color: Colors.white,
+            )),
+        BottomNavigationBarItem(
+            label: 'Like',
+            icon: Icon(
+              Icons.star,
+              color: Colors.white,
+            )),
+        BottomNavigationBarItem(
+          label: 'Dislike',
+          icon: Icon(
+            Icons.star,
+            color: Colors.white,
+          ),
+        ),
+      ]),
       body: Column(
         children: [
           Container(
@@ -30,25 +51,13 @@ class ViewImagePage extends StatelessWidget {
                   maxScale: 2,
                   panEnabled: false,
                   child: Container(
-                    child: Image.asset(
-                      'assets/images/$url',
-                      // fit: BoxFit.cover,
-                    ),
+                    child: Hero(
+                        tag: url,
+                        child: Image.asset(
+                          'assets/images/$url',
+                          // fit: BoxFit.cover,
+                        )),
                   ))),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 0, horizontal: 25),
-            child: Row(
-              children: [
-                IconButton(
-                    splashRadius: 20,
-                    onPressed: () {},
-                    icon: const Icon(
-                      Icons.star,
-                      color: Colors.white,
-                    ))
-              ],
-            ),
-          )
         ],
         // child: Image.asset('assets/images/$url'),
       ),
