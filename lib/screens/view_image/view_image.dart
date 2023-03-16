@@ -20,54 +20,21 @@ class ViewImagePage extends StatelessWidget {
         iconTheme: const IconThemeData(color: Colors.white),
         leading: IconButton(onPressed: () => Navigator.of(context).pop(), icon: const Icon(Icons.arrow_back)),
       ),
-      bottomNavigationBar: BottomNavigationBar(backgroundColor: Colors.black, items: const [
-        BottomNavigationBarItem(
-            label: 'Star',
-            icon: Icon(
-              Icons.star,
-              color: Colors.white,
-            )),
-        BottomNavigationBarItem(
-            label: 'Like',
-            icon: Icon(
-              Icons.star,
-              color: Colors.white,
-            )),
-        BottomNavigationBarItem(
-          label: 'Dislike',
-          icon: Icon(
-            Icons.star,
-            color: Colors.white,
-          ),
-        ),
-      ]),
       body: Column(
         children: [
-          Container(
+          SizedBox(
               height: 500,
+              width: double.maxFinite,
               child: InteractiveViewer(
                   clipBehavior: Clip.antiAlias,
                   minScale: 0.1,
                   maxScale: 2,
                   panEnabled: false,
                   child: Container(
-                    child: Hero(
-                        tag: url,
-                        child: Image.asset(
-                          'assets/images/$url',
-                        )),
+                    child: Hero(tag: url, child: Image.network(url)),
                   ))),
         ],
-        // child: Image.asset('assets/images/$url'),
       ),
     );
   }
 }
-
-// 6411d1c862f48645f1dd8cf1
-// remove cmake shit
-// add api fetch 
-// add infinite scroll
-// add oauth
-// add save bookmarked photos 
-// add a different page for bm photos

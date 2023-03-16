@@ -37,12 +37,10 @@ class _ImageCardState extends State<ImageCard> {
               borderRadius: BorderRadius.circular(8.0),
               child: Hero(
                   tag: widget.imgSrc,
-                  child: Image.asset(
-                    'assets/images/${widget.imgSrc}',
-
-                    // width: 30,
-                    // height: 400,
-                  )),
+                  child: Image.network(widget.imgSrc
+                      // width: 30,
+                      // height: 400,
+                      )),
             )));
   }
 }
