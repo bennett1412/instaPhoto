@@ -5,12 +5,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 17, 53, 107),
       appBar: AppBar(
-        title: const Text('Photos'),
+        centerTitle: true,
+        shadowColor: Colors.transparent,
+        backgroundColor: Color.fromARGB(255, 17, 53, 107),
+        title: const Text('instaPhoto'),
       ),
-      body: const Center(
-        child: Masonry(),
-      ),
+      body: LayoutBuilder(builder: (BuildContext context, BoxConstraints constraints) {
+        return Masonry(constraints: constraints);
+      }),
     );
   }
 }
