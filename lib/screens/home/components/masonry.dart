@@ -18,12 +18,6 @@ class Masonry extends StatefulWidget {
 class _MasonryState extends State<Masonry> {
   late ScrollController scrollController;
 
-  final List<String> photos = [
-    'test1.jpeg',
-    'test2.jpeg',
-    'test3.jpeg',
-    'test4.jpeg',
-  ];
   late List<Post>? posts = [];
   bool isLoading = false;
   void _getData(int page) async {
@@ -76,7 +70,6 @@ class _MasonryState extends State<Masonry> {
                 mainAxisSpacing: 3,
                 crossAxisSpacing: 2,
                 itemBuilder: (context, index) {
-                  // log(posts![index].image);
                   if (index < posts!.length) {
                     return ImageCard(imgSrc: posts![index].image);
                   } else {
@@ -91,7 +84,6 @@ class _MasonryState extends State<Masonry> {
   }
 
   void _scrollListener() {
-    print(scrollController.position.extentAfter);
     if (scrollController.position.extentAfter < 200) {
       _getData(page);
       setState(() {
