@@ -1,6 +1,6 @@
 # insta_photo
 
-A flutter app to view pictures and bookmark them.
+A flutter app to view pictures.
 
 ## Running the project
 
