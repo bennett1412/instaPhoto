@@ -34,7 +34,7 @@ class _MasonryState extends State<Masonry> {
       List<Post>? newPosts = await APIService().fetchPosts(page);
       if (newPosts != null) {
         setState(() {
-          posts!.addAll(newPosts!);
+          posts!.addAll(newPosts);
           isLoading = false;
         });
       } else {
