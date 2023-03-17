@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:insta_photo/screens/home/home.dart';
-import 'package:insta_photo/screens/view_image/view_image.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,7 +25,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: HomePage(),
+      home: const HomePage(),
       // routes: {
       //   '/': (context) => HomePage(),
       //   '/view-image':(context) => ViewImagePage(url: url)

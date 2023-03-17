@@ -1,6 +1,3 @@
-import 'dart:math';
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:insta_photo/screens/view_image/view_image.dart';
 
@@ -9,12 +6,10 @@ class ImageCard extends StatefulWidget {
   const ImageCard({Key? key, required this.imgSrc}) : super(key: key);
 
   @override
-  _ImageCardState createState() => _ImageCardState();
+  ImageCardState createState() => ImageCardState();
 }
 
-class _ImageCardState extends State<ImageCard> {
-  bool _active = false;
-
+class ImageCardState extends State<ImageCard> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -24,7 +19,6 @@ class _ImageCardState extends State<ImageCard> {
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) {
-                print(widget.imgSrc);
                 return ViewImagePage(url: widget.imgSrc);
               }),
             );
